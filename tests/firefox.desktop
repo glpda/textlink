@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Network;WebBrowser;
+Encoding=UTF-8
+Name=Firefox
+GenericName=Web Browser
+Comment=Browse the Web
+Type=Application
+TryExec=firefox
+Exec=firefox %u
+Icon=firefox
+Terminal=false

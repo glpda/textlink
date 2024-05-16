@@ -1,0 +1,8 @@
+[Desktop Entry]
+Icon=text-html
+Name[de]=Beispiellink
+Name[en]=example link
+Name[es]=enlace de ejemplo
+Name[fr]=exemple de lien
+Type=Link
+URL[$e]=https://www.example.com/

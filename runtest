@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+
+
+python3 -m tests.textlink
+
+./textlink.py tests/example.desktop tests/example-out.url
+diff tests/example-out.url tests/example.url
+
+./textlink.py tests/example.url tests/example-out.desktop
+diff tests/example-out.desktop tests/example.desktop
+
+rm tests/*-out.*
+
