@@ -24,6 +24,8 @@ class TextLink:
         return self.url
 
     def __eq__(self, other):
+        if type(self) != type(other):
+            return False
         return self.url == other.url
 
     def toTextLink(self):
@@ -50,6 +52,8 @@ class FreeDesktop(TextLink):
                "URL="  + self.url  + "\n"
 
     def __eq__(self, other):
+        if type(self) != type(other):
+            return False
         return self.icon == other.icon \
            and self.name == other.name \
            and self.url  == other.url
