@@ -14,7 +14,7 @@ class InvalidDesktopEntryType(Exception):
 
 
 class TextLink:
-    def __init__(self, url):
+    def __init__(self, url: str):
         if type(url) == str:
             self.url = url
         else:
@@ -32,13 +32,13 @@ class TextLink:
     def toWindowsURL(self):
         return WindowsURL(self.url)
 
-    def toFreeDesktop(self, name):
+    def toFreeDesktop(self, name: str):
         return FreeDesktop(self.url, name)
 
 
 class FreeDesktop(TextLink):
     icon = "text-html"
-    def __init__(self, url, name):
+    def __init__(self, url: str, name: str):
         super().__init__(url)
         self.name = name
 
@@ -54,7 +54,7 @@ class FreeDesktop(TextLink):
            and self.name == other.name \
            and self.url  == other.url
 
-    def read_string(string):
+    def read_string(string: str):
         ini = configparser.ConfigParser()
         ini.read_string(string)
         if ini['Desktop Entry']['Type'] != "Link":
@@ -83,7 +83,7 @@ class WindowsURL(TextLink):
                "IconIndex=1\n"\
                "URL=" + self.url + "\n"
 
-    def read_string(string):
+    def read_string(string: str):
         ini = configparser.ConfigParser()
         ini.read_string(string)
         url = ini['InternetShortcut']['URL']
